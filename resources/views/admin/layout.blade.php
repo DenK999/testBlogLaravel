@@ -3,10 +3,24 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Blank Page</title>
+    <title>Blog</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
+
+    <style>
+        table.table form
+        {
+            display: inline-block;
+        }
+        button.delete
+        {
+            background: transparent;
+            border: none;
+            color: #337ab7;
+            padding: 0px;
+        }
+    </style>
 
     <link rel="stylesheet" href="/css/admin.css">
 
@@ -133,7 +147,7 @@
                                 <img src="/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                 <p>
-                                    Alexander Pierce - Web Developer
+                                   Denys K - Web Developer
                                     <small>Member since Nov. 2012</small>
                                 </p>
                             </li>
@@ -184,7 +198,7 @@
                     <img src="/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>Alexander Pierce</p>
+                    <p>Denys K</p>
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
@@ -204,33 +218,30 @@
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Админ-панель</span>
+                        <i class="fa fa-dashboard"></i> <span>Admin-panel</span>
                     </a>
                 </li>
-                <li><a href="#"><i class="fa fa-sticky-note-o"></i> <span>Посты</span></a></li>
-                <li><a href="#"><i class="fa fa-list-ul"></i> <span>Категории</span></a></li>
-                <li><a href="#"><i class="fa fa-tags"></i> <span>Теги</span></a></li>
+                <li><a href="#"><i class="fa fa-sticky-note-o"></i> <span>Posts</span></a></li>
+                <li><a href="#"><i class="fa fa-list-ul"></i> <span>Category</span></a></li>
+                <li><a href="#"><i class="fa fa-tags"></i> <span>Tags</span></a></li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-commenting"></i> <span>Комментарии</span>
+                        <i class="fa fa-commenting"></i> <span>Comments</span>
                         <span class="pull-right-container">
               <small class="label pull-right bg-green">5</small>
             </span>
                     </a>
                 </li>
-                <li><a href="#"><i class="fa fa-users"></i> <span>Пользователи</span></a></li>
-                <li><a href="#"><i class="fa fa-user-plus"></i> <span>Подписчики</span></a></li>
+                <li><a href="#"><i class="fa fa-users"></i> <span>Users</span></a></li>
+                <li><a href="#"><i class="fa fa-user-plus"></i> <span>Subscribs</span></a></li>
 
             </ul>
         </section>
-        <!-- /.sidebar -->
     </aside>
 
-    <!-- =============================================== -->
 
-    <!-- Content Wrapper. Contains page content -->
     @yield('content');
-    <!-- /.content-wrapper -->
+
 
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
@@ -240,17 +251,13 @@
         reserved.
     </footer>
 
-    <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
-        <!-- Create the tabs -->
         <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
             <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
 
             <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
         </ul>
-        <!-- Tab panes -->
         <div class="tab-content">
-            <!-- Home tab content -->
             <div class="tab-pane" id="control-sidebar-home-tab">
                 <h3 class="control-sidebar-heading">Recent Activity</h3>
                 <ul class="control-sidebar-menu">
