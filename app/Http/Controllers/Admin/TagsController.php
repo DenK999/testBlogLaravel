@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Category;
+use App\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class CategoriesController extends Controller
+class TagsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $aCategories = Category::all();
-
-        return view('admin.categories.index', ['aCategories' => $aCategories]);
+        $aTags = Tag::all();
+        return view('admin.tags.index', ['aTags'=>$aTags]);
     }
 
     /**
@@ -27,7 +26,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.create');
+        return view('admin.tags.create');
     }
 
     /**
@@ -39,13 +38,13 @@ class CategoriesController extends Controller
     public function store(Request $aRequest)
     {
         $this->validate($aRequest, [
-            'title' => 'required'
+            'title' =>  'required'
         ]);
 
-        Category::create($aRequest->all());
-
-        return redirect()->route('categories.index');
+        Tag::create($aRequest->all());
+        return redirect()->route('tags.index');
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -55,9 +54,8 @@ class CategoriesController extends Controller
      */
     public function edit($iId)
     {
-        $aCategory = Category::find($iId);
-
-        return view('admin.categories.edit', ['aCategory'=>$aCategory]);
+        $aTag = Tag::find($iId);
+        return view('admin.tags.edit', ['aTag'=>$aTag]);
     }
 
     /**
@@ -67,16 +65,17 @@ class CategoriesController extends Controller
      * @param  int  $iId
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $aRequest, $iId)
+    public function update(Request $id, $iId)
     {
-        $this->validate($aRequest, [
-            'title' => 'required'
+        $this->validate($id, [
+            'title' =>  'required'
         ]);
 
-        $aCategory = Category::find($iId);
-        $aCategory->update($aRequest->all());
+        $aTag = Tag::find($iId);
 
-        return redirect()->route('categories.index');
+        $aTag->update($id->all());
+
+        return redirect()->route('tags.index');
     }
 
     /**
@@ -87,9 +86,7 @@ class CategoriesController extends Controller
      */
     public function destroy($iId)
     {
-        Category::find($iId)->delete();
-
-        return redirect()->route('categories.index');
+        Tag::find($iId)->delete();
+        return redirect()->route('tags.index');
     }
-
 }

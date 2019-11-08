@@ -25,10 +25,10 @@
                 </div>
             </div>
             <div class="box-footer">
-                <button class="btn btn-default">Back</button>
+                <a href="{{route('categories.index')}}" class="btn btn-default">Back</a>
                 <button class="btn btn-warning pull-right">Edit</button>
             </div>
-            {!! Form::close() !!} !!}
+            {!! Form::close() !!}
         </div>
     </section>
 </div>
